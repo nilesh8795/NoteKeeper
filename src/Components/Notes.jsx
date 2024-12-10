@@ -5,7 +5,6 @@ export default function Notes() {
   const [text, setText] = useState("");
   const [notes, setNotes] = useState([]);
 
-  // Function to handle adding a note
   const handleAddNote = () => {
       const obj = {
         title: title,
@@ -32,12 +31,14 @@ export default function Notes() {
           />
         </div>
         <textarea
-          value={text}  
+          value={text}
           onChange={(e) => setText(e.target.value)}
           placeholder="Enter Text"
           rows="4"
           className="w-full p-2 rounded text-white bg-transparent border-b-2 border-gray-500 focus:outline-none focus:ring-0"
+          style={{ resize: "none" }} // Disables resizing
         />
+
         <button
           onClick={handleAddNote}
           className="px-4 my-4 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-bold rounded"
