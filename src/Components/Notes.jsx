@@ -7,7 +7,6 @@ export default function Notes() {
 
   // Function to handle adding a note
   const handleAddNote = () => {
-    if (title && text) {
       const obj = {
         title: title,
         text: text,
@@ -15,7 +14,7 @@ export default function Notes() {
       setNotes([...notes, obj]); 
       setTitle(""); 
       setText("");
-    }
+
   };
 
   return (
