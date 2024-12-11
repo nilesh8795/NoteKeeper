@@ -15,6 +15,16 @@ export default function Notes() {
       setText("");
 
   };
+  const trash = (id) => {
+    const res = notes.filter((note,index) => {
+      return index != id;
+    });
+    setNotes(res);
+  };
+
+  function edit(){
+    alert("Hello edit")
+  }
 
   return (
     <div className="min-h-screen bg-gray-800 text-white p-4">
@@ -54,6 +64,8 @@ export default function Notes() {
             key={index}
             className="h-auto w-full p-4 bg-gray-700 rounded shadow-lg"
           >
+            <button type="button" onClick={() => trash(index) }  class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Red</button>
+            {/* <button onClick={edit}>edit</button> */}
             <h2 className="text-xl font-bold mb-2">{note.title}</h2>
             <p className="text-gray-300">{note.text}</p>
           </div>
