@@ -37,7 +37,7 @@ export default function Notes() {
     try {
       if (editId) {
         // Update Note
-        const URL = `http://localhost:5000/update/${editId}`;
+        const URL = `https://note-backend-sw0f.onrender.com/update/${editId}`;
         const response = await axios.put(URL, formData, config);
         if (response.data.success) {
           fetchNotes();
@@ -45,7 +45,7 @@ export default function Notes() {
         }
       } else {
         // Add Note
-        const URL = "http://localhost:5000/addnote";
+        const URL = "https://note-backend-sw0f.onrender.com/addnote";
         const response = await axios.post(URL, formData, config);
         if (response.data.success) {
           fetchNotes();
@@ -60,7 +60,7 @@ export default function Notes() {
 
   const handleDelete = async (id) => {
     const token = localStorage.getItem("authToken");
-    const URL = `http://localhost:5000/deletenote/${id}`;
+    const URL = `https://note-backend-sw0f.onrender.com/deletenote/${id}`;
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -79,7 +79,7 @@ export default function Notes() {
 
   const fetchNotes = async () => {
     const token = localStorage.getItem("authToken");
-    const URL = "http://localhost:5000/getnotes";
+    const URL = "https://note-backend-sw0f.onrender.com/getnotes";
     const config = {
       headers: {
         Authorization: `Bearer ${token}`,
