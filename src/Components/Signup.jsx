@@ -31,8 +31,7 @@ export default function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent page refresh
     try {
-      const URL = "http://localhost:5000/register"; // Your backend endpoint
-      console.log(URL);
+      const URL = "https://note-backend-sw0f.onrender.com/register"; 
       const response = await axios.post(URL, formData);
       if (response.data.success) {
         // Success: Show SweetAlert success message and redirect to login page
