@@ -41,7 +41,7 @@ export default function Login() {
     }
 
     try {
-      const URL = "http://localhost:5000/login";
+      const URL = "https://note-backend-sw0f.onrender.com/login";
       const response = await axios.post(URL, formData);
 
       if (response.data.success === true) {
